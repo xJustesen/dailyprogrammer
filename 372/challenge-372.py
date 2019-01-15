@@ -10,8 +10,8 @@ def check_string(STR, ID):
     # Count number of time a letter appears
     for i in range(SIZE):
         id = ID[i]
-        for l in STR:
-            if id == l:
+        for s in STR:
+            if id == s:
                 counts[i] += 1
 
     return len(set(counts)) <= 1
@@ -28,12 +28,12 @@ def getLetters(STR):
     if len(STR) > 0:
         ID = [STR[0]]
 
-        for l in STR:
+        for s in STR:
             for id in ID:
-                isUnique = False if l == id else True
+                isUnique = False if s == id else True
                 if isUnique == False: break
             if isUnique:
-                ID.append(l)
+                ID.append(s)
     else:
         ID = STR
 
