@@ -11,6 +11,7 @@ def upc(numbers):
     M = (3 * sum(odds) + sum(evens)) % 10
     return 0 if M == 0 else 10 - M
 
+
 def main():
     a = "4210000526"
     b = "3600029145"
@@ -21,6 +22,7 @@ def main():
     print("upc(" + str(b) + ") => " + str(upc(b)))
     print("upc(" + str(c) + ") => " + str(upc(c)))
     print("upc(" + str(d) + ") => " + str(upc(d)))
+
 
 if __name__ == '__main__':
     main()

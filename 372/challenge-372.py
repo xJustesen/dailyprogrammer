@@ -16,12 +16,14 @@ def check_string(STR, ID):
 
     return len(set(counts)) <= 1
 
+
 def output(STR, ID):
     ''' Writes output from "check_string" to terminal '''
     if check_string(STR, ID):
         print("The string: '" + STR + "' is balanced.")
     else:
         print("The string: '" + STR + "' is not balanced.")
+
 
 def getLetters(STR):
     ''' Given a string (STR) containing only lowercase letters, this function returns a list of which lowercase letters (ID) appear in the string '''
@@ -31,13 +33,15 @@ def getLetters(STR):
         for s in STR:
             for id in ID:
                 isUnique = False if s == id else True
-                if isUnique == False: break
+                if isUnique == False:
+                    break
             if isUnique:
                 ID.append(s)
     else:
         ID = STR
 
     return ID
+
 
 def main():
 
@@ -47,16 +51,17 @@ def main():
     single = "x"
     mixed = "aaaxxafxbcxhefqf"
 
-    ID = getLetters(balanced);
+    ID = getLetters(balanced)
     output(balanced, ID)
-    ID = getLetters(notBalanced);
+    ID = getLetters(notBalanced)
     output(notBalanced, ID)
-    ID = getLetters(empty);
+    ID = getLetters(empty)
     output(empty, ID)
-    ID = getLetters(single);
+    ID = getLetters(single)
     output(single, ID)
-    ID = getLetters(mixed);
+    ID = getLetters(mixed)
     output(mixed, ID)
+
 
 if __name__ == '__main__':
     main()
