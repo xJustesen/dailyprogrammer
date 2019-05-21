@@ -12,9 +12,9 @@ class ParandosParadox:
     def CalculateCapital(self):
         ''' Calculate new capital after game has been played '''
         if self.game_won_:
-            self.capital_ = self.capital_ + 1
+            self.capital_ += 1.0
         else:
-            self.capital_ = self.capital_ - 1
+            self.capital_ -= 1.0
 
     def PlayGameA(self):
         ''' Play game version where win probability is constant '''
@@ -64,13 +64,12 @@ class ParandosParadox:
                     self.PlayGameB()
                 else:
                     self.PlayGameA()
-                average_result_game[j+1] = self.capital_ + \
-                    average_result_game[j+1]
+                average_result_game[j+1] += self.capital_
 
             progress += 1
-            average_result = average_result + self.capital_
+            average_result += + self.capital_
 
-        average_result = average_result / number_of_iterations
+        average_result /= number_of_iterations
         average_result_game[0] = capital * number_of_iterations
         average_result_game = [
             result / number_of_iterations - capital for result in average_result_game]
