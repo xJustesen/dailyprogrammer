@@ -1,0 +1,4 @@
+Help on function HavelHakimi in module __main__:
+
+HHaavveellHHaakkiimmii(seq)
+    The Havel–Hakimi algorithm is an algorithm in graph theory solving the graph realization problem. That is, it answers the following question: Given a finite list of nonnegative integers, is there a simple graph such that its degree sequence is exactly this list
